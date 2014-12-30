@@ -1,0 +1,21 @@
+Enter file contents here
+def cipher(user_input, num)
+    d_letters = ('a'..'z').to_a
+    u_letters = ('A'..'Z').to_a
+    output = ""
+
+    user_input.each_char do |x|
+        if d_letters.include?(x)
+            output +=d_letters[d_letters.index(x) - num]
+        elsif
+            u_letters.include?(x)
+            output +=u_letters[u_letters.index(x) - num]
+        else   
+            output += x
+        end
+    end
+    puts output + " :the key is " + num.to_s
+    
+end
+
+cipher("abcdefgz!", 2)
