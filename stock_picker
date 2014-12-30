@@ -1,0 +1,26 @@
+
+stock_prices = [3, 4, 7, 1, 19, 20, 13, 5, 3, 19, 22, 5, 10]
+    c = stock_prices.size
+    d = 0
+    x = 1
+    max_gain = 0
+    
+    while d < c do
+        while x < c do
+        gain = stock_prices[x] - stock_prices[d]
+        puts gain
+            if gain > max_gain
+                max_gain = gain
+                buy_day = stock_prices.index(stock_prices[d])
+                sell_day = stock_prices.index(stock_prices[x])
+            end
+        x = x + 1
+    end
+        d = d + 1
+        x = d + 1
+    end
+
+buy_day = buy_day + 1
+sell_day = sell_day + 1
+
+puts "buy on day " + buy_day.to_s + " and sell on day " + sell_day.to_s + " for a gain of $" + max_gain.to_s
